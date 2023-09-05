@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: monospace;
+}
+
 body {
   background-image: url("assets/background.png");
 }
@@ -9,6 +13,31 @@ body {
   border: #b6bb61 2px outset;
 }
 
-.clickable:hover {
 
+.clickable::after {
+  content: '';
+  display: none;
+  background-image: url("assets/hand.png");
+  height: 8px;
+  width: 16px;
+  top: 4px;
+  position: absolute;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: hand-pointer;
+  animation-duration: 1s;
+}
+
+.clickable {
+  position: relative;
+}
+
+@keyframes hand-pointer {
+  0% { left:-15px }
+  50% { left:-10px }
+  100% { left:-15px }
+}
+
+.clickable:hover::after {
+  display: block;
 }

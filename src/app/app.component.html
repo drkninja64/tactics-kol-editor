@@ -1,5 +1,5 @@
 <div class="card">
-  <button (click)="fileInput.click()">Upload file</button>
+  <button class="clickable" (click)="fileInput.click()">Upload file</button>
   <input #fileInput style="display: none" type="file" (change)="loadFile($event)">
 </div>
 <pre #display></pre>
