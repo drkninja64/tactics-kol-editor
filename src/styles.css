@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-image: url("assets/background.png");
+}
+
+.card {
+  background-image: url("assets/menu-bg.png");
+  padding: 10px;
+  border: #b6bb61 2px outset;
+}
+
+.clickable:hover {
+
+}
