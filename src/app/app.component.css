@@ -17,12 +17,18 @@ section#characterSection {
 section#characterSection .card {
   max-width: 300px;
   min-width: 300px;
-  display: grid;
+  display: flex;
   gap: 10px;
 }
 
 section#characterSection .card picture {
-  grid-column: 1 / 1;
+  max-width: 45px;
+}
+
+section#characterSection .card picture img{
+  height: 45px;
+  width: 45px;
+  object-fit: contain;
 }
 
 section#characterSection .card article {

@@ -9,7 +9,7 @@
   <ng-container *ngFor="let character of characters">
     <div class="card">
       <picture>
-        <img alt="portrait" [src]="character.imageUrl">
+        <img [alt]="character.imageUrl" [src]="character.imageUrl">
       </picture>
       <article>
         <span>{{character.name}}</span>

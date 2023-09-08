@@ -1,4 +1,5 @@
 import {CHAR_MAP} from "../constants/char-map.constants";
+import {POR_URL} from "../constants/portrait.constants";
 
 export class CharacterModel {
   // The data for the character as a number array
@@ -13,7 +14,9 @@ export class CharacterModel {
     this.pointer = pointer;
     // Get the 104 bytes of the character
     this.raw = buffer.slice(pointer, pointer + 104);
-    this.name = this.parseName();
+    this.imageUrl = this.parseImage();
+    if (this.raw[78] == 0) this.name = 'None'
+    else this.name = this.parseName();
     console.log(this.name, this.raw);
   }
 
@@ -26,5 +29,10 @@ export class CharacterModel {
       str += CHAR_MAP[key];
     }
    return str;
+  }
+
+  private parseImage() {
+    if (this.raw[78] == 0) return `assets/none.png`;
+    return `assets/portrait/${POR_URL[this.raw[78]]}.gif`;
   }
 }
