@@ -13,7 +13,6 @@ body {
   border: #b6bb61 2px outset;
 }
 
-
 .clickable::after {
   content: '';
   display: none;

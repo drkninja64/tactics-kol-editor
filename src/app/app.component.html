@@ -1,5 +1,20 @@
-<div class="card">
-  <button class="clickable" (click)="fileInput.click()">Upload file</button>
-  <input #fileInput style="display: none" type="file" (change)="loadFile($event)">
-</div>
-<pre #display></pre>
+<header>
+  <div class="card">
+    <button class="clickable" (click)="fileInput.click()">Upload file</button>
+    <input #fileInput style="display: none" type="file" (change)="loadFile($event)">
+    <span #display></span>
+  </div>
+</header>
+<section id="characterSection" #characterSection>
+  <ng-container *ngFor="let character of characters">
+    <div class="card">
+      <picture>
+        <img alt="portrait" [src]="character.imageUrl">
+      </picture>
+      <article>
+        <span>{{character.name}}</span>
+      </article>
+    </div>
+  </ng-container>
+</section>
+

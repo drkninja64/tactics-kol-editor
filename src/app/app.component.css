@@ -1,0 +1,30 @@
+
+header .card {
+  display: flex;
+  flex-direction: row;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+section#characterSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+section#characterSection .card {
+  max-width: 300px;
+  min-width: 300px;
+  display: grid;
+  gap: 10px;
+}
+
+section#characterSection .card picture {
+  grid-column: 1 / 1;
+}
+
+section#characterSection .card article {
+  grid-column: 2 / 2;
+}
