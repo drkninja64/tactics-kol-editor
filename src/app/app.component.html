@@ -9,10 +9,30 @@
   <ng-container *ngFor="let character of characters">
     <div class="card">
       <picture>
-        <img [alt]="character.imageUrl" [src]="character.imageUrl">
+        <img [src]="character.imageUrl" alt="">
       </picture>
       <article>
-        <span>{{character.name}}</span>
+        <section class="card-header">
+          <b>{{character.name}}</b>
+          <div>
+            <span><b style="color: #EF6C00">Lv.</b> 1</span>
+            <span><b style="color: #EF6C00">EXP</b>: 85</span>
+          </div>
+        </section>
+        <section class="card-body">
+          <div>
+            <img class="element" alt="element" [src]="character.elementUrl">
+            <b style="padding-left: 3px">{{character.alignment}}</b>
+          </div>
+          <div>
+            <p>
+              <b style="color: #ef0038">HP</b>: 150
+            </p>
+            <p>
+              <b style="color: #226fe3">MP</b>: 10
+            </p>
+          </div>
+        </section>
       </article>
     </div>
   </ng-container>

@@ -15,8 +15,8 @@ section#characterSection {
 }
 
 section#characterSection .card {
-  max-width: 300px;
-  min-width: 300px;
+  max-width: 260px;
+  min-width: 260px;
   display: flex;
   gap: 10px;
 }
@@ -28,9 +28,34 @@ section#characterSection .card picture {
 section#characterSection .card picture img{
   height: 45px;
   width: 45px;
+  border: #b6bb61 1px outset;
+  background-color: #ffffff61;
   object-fit: contain;
 }
 
 section#characterSection .card article {
   grid-column: 2 / 2;
+  width: 230px;
+}
+
+section#characterSection .card article section {
+  display: flex;
+  justify-content: space-between;
+}
+
+section#characterSection .card article .card-body img.element {
+  height: 25px;
+  width: 25px;
+  border: #b6bb61 1px outset;
+  background-color: #ffffff61;
+  object-fit: contain;
+}
+
+section#characterSection .card article .card-header div {
+  display: flex;
+  gap: 5px;
+}
+
+section#characterSection .card article .card-header {
+  margin-bottom: 5px;
 }

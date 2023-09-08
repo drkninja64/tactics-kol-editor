@@ -13,6 +13,14 @@ body {
   border: #b6bb61 2px outset;
 }
 
+.tactics-border {
+  border: #b6bb61 2px outset;
+}
+
+p {
+  margin: 0;
+}
+
 .clickable::after {
   content: '';
   display: none;

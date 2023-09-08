@@ -1,5 +1,6 @@
 import {CHAR_MAP} from "../constants/char-map.constants";
 import {POR_URL} from "../constants/portrait.constants";
+import {ALIGN, ELEM_URL} from "../constants/element.constants";
 
 export class CharacterModel {
   // The data for the character as a number array
@@ -8,7 +9,9 @@ export class CharacterModel {
   private pointer!: number;
 
   public name: string = "";
-  imageUrl: string = "";
+  public imageUrl: string = "";
+  public elementUrl: string = "";
+  public alignment: string = "";
 
   constructor(buffer: number[], pointer: number) {
     this.pointer = pointer;
@@ -17,7 +20,7 @@ export class CharacterModel {
     this.imageUrl = this.parseImage();
     if (this.raw[78] == 0) this.name = 'None'
     else this.name = this.parseName();
-    console.log(this.name, this.raw);
+    this.parseElement();
   }
 
   private parseName(): string {
@@ -34,5 +37,12 @@ export class CharacterModel {
   private parseImage() {
     if (this.raw[78] == 0) return `assets/none.png`;
     return `assets/portrait/${POR_URL[this.raw[78]]}.gif`;
+  }
+
+  private parseElement() {
+    console.log(this.raw[84])
+    if (this.raw[84] == 0) this.elementUrl = `assets/none.png`;
+    else this.elementUrl = `assets/element/${ELEM_URL[this.raw[84]]}.gif`;
+    this.alignment = ALIGN[this.raw[85]];
   }
 }
